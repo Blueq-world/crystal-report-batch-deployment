@@ -26,16 +26,16 @@ Use the .net SDK to batch upload and update the crystal report login information
 * ### Deployment successful
 ![](Guideline%20Image/Capture2.PNG)
 
-#### Backed up to TestSITBACKUP20231212 folder
+#### Backed up to "TestSITBACKUP20231212" folder
 ![](Guideline%20Image/Capture6.PNG)
 
-#### Uploaded to TestSIT folder
+#### Uploaded to "TestSIT" folder
 ![](Guideline%20Image/Capture5.PNG)
 
-#### Backed up to TestUATBACKUP20231212 folder
+#### Backed up to "TestUATBACKUP20231212" folder
 ![](Guideline%20Image/Capture8.PNG)
 
-#### Uploaded to TestAUT folder
+#### Uploaded to "TestAUT" folder
 ![](Guideline%20Image/Capture9.PNG)
 
 #### Updated the database logon information
