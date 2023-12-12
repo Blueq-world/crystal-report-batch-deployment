@@ -9,7 +9,7 @@ Use the .net SDK to batch upload reports and update the report login information
 * ### Release souce code with x64 platform
 ![](Guideline%20Image/Capture11.PNG)
 
-* ### Configuration in the App.config in the release folder
+* ### Configuration in the CrystalReportDeploy.exe.config in the release folder
 ![](Guideline%20Image/Capture10.PNG)
 
 * ### Click "CrystalReportDeploy.exe" file
