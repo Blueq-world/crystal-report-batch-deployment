@@ -1,7 +1,7 @@
 # crystal-report-batch-deployment
 Use the .net SDK to batch upload and update the crystal report login information in the Crystal Report Server.
 
-## Usage* 
+## Usage 
 * ### Release souce code with x64 platform
 ![](Guideline%20Image/Capture11.PNG)
 
@@ -13,7 +13,7 @@ Use the .net SDK to batch upload and update the crystal report login information
 * ### Input the "Path of publish source folder" and the "Deployment folder of the Crystal Service"
 ![](Guideline%20Image/Capture.PNG)
 
-The report list in the publish source folder
+#### The report list in the publish source folder
 ![](Guideline%20Image/Capture4.PNG)
 
 * ### Click OK button
@@ -26,17 +26,17 @@ The report list in the publish source folder
 * ### Deployment successful
 ![](Guideline%20Image/Capture2.PNG)
 
-BackUp to TestSITBACKUP20231212 folder
+#### Backed up to TestSITBACKUP20231212 folder
 ![](Guideline%20Image/Capture6.PNG)
 
-Uploaded to TestSIT folder
+#### Uploaded to TestSIT folder
 ![](Guideline%20Image/Capture5.PNG)
 
-BackUp to TestUATBACKUP20231212 folder
+#### Backed up to TestUATBACKUP20231212 folder
 ![](Guideline%20Image/Capture8.PNG)
 
-Uploaded to TestAUT folder
+#### Uploaded to TestAUT folder
 ![](Guideline%20Image/Capture9.PNG)
 
-Updated the database logon information
+#### Updated the database logon information
 ![](Guideline%20Image/Capture7.PNG)
