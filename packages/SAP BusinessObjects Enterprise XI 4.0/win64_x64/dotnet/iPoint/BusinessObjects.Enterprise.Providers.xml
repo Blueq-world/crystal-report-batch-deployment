@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly>
+<name>BusinessObjects.Enterprise.Providers</name>
+</assembly>
+<members>
+<member name="T:BusinessObjects.Enterprise.Providers.AuthenticationType">
+<summary>The authentication method used to log on.
+</summary>
+</member>
+<member name="F:BusinessObjects.Enterprise.Providers.AuthenticationType.SecEnterprise">
+<summary>Enterprise authentication
+</summary>
+</member>
+<member name="F:BusinessObjects.Enterprise.Providers.AuthenticationType.SecLdap">
+<summary>LDAP authentication
+</summary>
+</member>
+<member name="F:BusinessObjects.Enterprise.Providers.AuthenticationType.SecWindowsAD">
+<summary>Windows Active Directory authentication
+</summary>
+</member>
+<member name="F:BusinessObjects.Enterprise.Providers.AuthenticationType.SecWindowsNT">
+<summary>Windows NT authentication
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEDataSource">
+<summary>The BOEDataSource class implements the custom BusinessObjects Enterprise data source control for tabular (flat) data.
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEDataSource.#ctor">
+<summary>Initializes a new instance of the BOEDataSource class.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEDataSource.MembershipProvider">
+<summary>Gets or sets the friendly name of the membership provider for this control.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEDataSource.SelectCommand">
+<summary>Gets or sets a CMS query string, written in the BOE Query Language, to retrieve information from the CMS repository.
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEDataSourceView">
+<summary>Supports the BOEDataSource control and provides an interface for data-bound controls to perform data operations against the BusinessObjects Enterprise CMS database.
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEDataSourceView.Select(System.Web.UI.DataSourceSelectArguments,System.Web.UI.DataSourceViewSelectCallback)">
+<summary>Retrieves data from the CMS repository using arguments specified in the BOE Query Language. 
+</summary>
+<param name="arguments">The arguments tell the Select method how to sort the data. If the UI is handling sorting and paging, it also specifies what page of data to return.</param>
+<param name="callback">The callback to the view.</param>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEDataSourceView.CanPage">
+<summary>Gets a value that indicates whether the view that is associated with the control supports paging.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEDataSourceView.CanRetrieveTotalRowCount">
+<summary>Gets a value that indicates whether the view that is associated with the control is able to determine the number of rows returned in a query. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEDataSourceView.CanSort">
+<summary>Gets a value that indicates whether the view that is associated with the control supports sorting. It is false if the SelectCommand value contains a TOP N query; otherwise true.
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSource">
+<summary>The BOEHierarchicalDataSource class implements the custom BusinessObjects Enterprise data source control for hierarchical data.
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSource.#ctor">
+<summary>Initializes a new instance of the BOEHierarchicalDataSource class.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSource.Home">
+<summary>Gets or sets the name that you want to display for the home node of the hierarchy.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSource.MembershipProvider">
+<summary>Gets or sets the friendly name of the membership provider for this control. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSource.Mode">
+<summary>Gets or sets a value that specifies whether to display folders or categories in the hierarchical control.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSource.QueryFilter">
+<summary>Gets or sets a QueryFilter that can filter out some nodes.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSource.Roots">
+<summary>Gets the collection of roots to display. 
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSourceView">
+<summary>Supports the BOEHierarchicalDataSource control and provides an interface for data-bound controls to perform data operations against the BusinessObjects Enterprise CMS database.
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSourceView.ExtractIDFromViewPath(System.String)">
+<summary>A helper function to convert a node's viewpath to the corresponding object id in the CMS.
+</summary>
+<param name="viewpath">The unique hierarchical path to the view.</param>
+<returns>The object id in the CMS.
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEHierarchicalDataSourceView.Select">
+<summary>Gets a list of the data items from the underlying data source. 
+</summary>
+<returns>A list of the data items.
+</returns>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEHierarchicalEnumerable">
+<summary>A hierarchical collection of data that the BOEHierarchicalDataSourceView returns. 
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEHierarchicalEnumerable.GetEnumerator">
+<summary>Gets an enumerator for iterating over the objects in the collection.
+</summary>
+<returns>An enumerator.
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEHierarchicalEnumerable.GetHierarchyData(System.Object)">
+<summary>Gets an IHierarchyData object from an enumerated item.
+</summary>
+<param name="enumeratedItem">The object to return an IHierarchyData instance for.</param>
+<returns>An IHierarchyData instance that represents the object passed into the GetHierarchyData method.
+</returns>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEHierarchyData">
+<summary>Represents one node of a hierarchical data structure. It consists of the node as well as properties that describe characteristics of the node. Used by the BusinessObjects Enterprise hierarchical data source control. 
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEHierarchyData.GetChildren">
+<summary>Gets an enumerable that represents the child nodes of the current node. 
+</summary>
+<returns>An enumerable that represents the child nodes of the current node.
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEHierarchyData.GetParent">
+<summary>Gets the parent node of the current node. 
+</summary>
+<returns>The parent node of the current node.
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEHierarchyData.ToString">
+<summary>Returns a string that represents the object. 
+</summary>
+<returns>A string containing the value of the Title property. 
+</returns>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchyData.CUID">
+<summary>Gets the SI_CUID which is the unique cluster ID of the object represented by the node. Read-Only.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchyData.HasChildren">
+<summary>Gets a boolean value that indicates whether the node has any child nodes. Read-Only.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchyData.ID">
+<summary>Gets the SI_ID of the object represented by the node. Read-Only. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchyData.Item">
+<summary>Gets the hierarchical data node that the BOEHierarchyData object represents. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchyData.Path">
+<summary>Gets the hierarchical path of the node. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchyData.Title">
+<summary>Gets the SI_NAME of the object represented by the node. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEHierarchyData.Type">
+<summary>Gets the SI_KIND of the object represented by the node. 
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEMembershipProvider">
+<summary>Used for validating users of a BusinessObjects Enterprise system. Supports the BOEDataSource control and provides an interface that lets data-bound controls perform data operations against the BusinessObjects Enterprise CMS database. 
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.#ctor">
+<summary>Initializes a new instance of the BOEMembershipProvider class.
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.ChangePassword(System.String,System.String,System.String)">
+<summary>If you are using secEnterprise authentication, this method updates the user's password. It is not supported for other authentication types. Takes the username, the old password, and the new password. 
+</summary>
+<param name="username">The username to change the password for. 
+</param>
+<param name="oldPassword">The old password associated with the username. 
+</param>
+<param name="newPassword">The user's new password. 
+</param>
+<returns>True if the password was successfully updated, and False otherwise. 
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.ChangePasswordQuestionAndAnswer(System.String,System.String,System.String,System.String)">
+<summary>Not supported. 
+</summary>
+<param name="username"></param>
+<param name="password"></param>
+<param name="newPasswordQuestion"></param>
+<param name="newPasswordAnswer"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.CreateUser(System.String,System.String,System.String,System.String,System.String,System.Boolean,System.Object,System.Web.Security.MembershipCreateStatus@)">
+<summary>Not supported. 
+</summary>
+<param name="username"></param>
+<param name="password"></param>
+<param name="email"></param>
+<param name="passwordQuestion"></param>
+<param name="passwordAnswer"></param>
+<param name="isApproved"></param>
+<param name="providerUserKey"></param>
+<param name="status"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.DeleteUser(System.String,System.Boolean)">
+<summary>Not supported.
+</summary>
+<param name="username"></param>
+<param name="deleteAllRelatedData"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.FindUsersByEmail(System.String,System.Int32,System.Int32,System.Int32@)">
+<summary>Not supported.
+</summary>
+<param name="emailToMatch"></param>
+<param name="pageIndex"></param>
+<param name="pageSize"></param>
+<param name="totalRecords"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.FindUsersByName(System.String,System.Int32,System.Int32,System.Int32@)">
+<summary>Gets a collection of users that match a specified username. 
+</summary>
+<param name="usernameToMatch">The username to look for. 
+</param>
+<param name="pageIndex">The zero-based index of the page of results to return. 
+</param>
+<param name="pageSize">The size of the page of results to return. 
+</param>
+<param name="totalRecords">The number of records that matched the specified username. 
+</param>
+<returns>A collection of users that contains a page of results that is of the size specified by iPageSize and that starts at the page specified by iPageIndex. 
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.GetAllUsers(System.Int32,System.Int32,System.Int32@)">
+<summary>Not supported.
+</summary>
+<param name="pageIndex"></param>
+<param name="pageSize"></param>
+<param name="totalRecords"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.GetNumberOfUsersOnline">
+<summary>Not supported.
+</summary>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.GetPassword(System.String,System.String)">
+<summary>Not supported.
+</summary>
+<param name="username"></param>
+<param name="answer"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.GetUser(System.String,System.Boolean)">
+<summary>Gets a user based on a specified user name.
+</summary>
+<param name="username">The user's name. 
+</param>
+<param name="userIsOnline">This parameter is ignored. 
+</param>
+<returns>A MembershipUser object. 
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.GetUser(System.Object,System.Boolean)">
+<summary>Gets a user based on a specified identifier.
+</summary>
+<param name="providerUserKey">The user's SI_ID. 
+</param>
+<param name="userIsOnline">This parameter is ignored. 
+</param>
+<returns>A MembershipUser object. 
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.GetUserNameByEmail(System.String)">
+<summary>Not supported.
+</summary>
+<param name="email"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.Initialize(System.String,System.Collections.Specialized.NameValueCollection)">
+<summary>Initializes the provider with values from the web.config file.
+</summary>
+<param name="name">The friendly name of the provider. 
+</param>
+<param name="config">A collection of the attributes to set when configuring the provider. 
+</param>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.Logoff">
+<summary>Logs off the user from the system. 
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.ResetPassword(System.String,System.String)">
+<summary>Not supported. 
+</summary>
+<param name="username"></param>
+<param name="answer"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.UnlockUser(System.String)">
+<summary>Not supported. 
+</summary>
+<param name="userName"></param>
+<returns>
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.UpdateUser(System.Web.Security.MembershipUser)">
+<summary>Not supported. 
+</summary>
+<param name="user"></param>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.ValidateUser(System.String,System.String)">
+<summary>Logs on a user to the BusinessObjects Enterprise system. 
+</summary>
+<param name="username">The username of the user to log on to the BusinessObjects Enterprise system. 
+</param>
+<param name="password">The user's password. 
+</param>
+<returns>True if the user is logged on to the BusinessObjects Enterprise system, and False otherwise. 
+</returns>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.ApplicationName">
+<summary>Gets or sets the name of the application that is using the BOEMembershipProvider. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.AuthenticationType">
+<summary>Gets the authentication type. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.BOESessionID">
+<summary>Gets a BusinessObjects Enterprise session ID for the logged on user.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.EnableCookies">
+<summary>Gets a boolean value that specifies whether the membership provider sets cookies. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.EnablePasswordReset">
+<summary>Not supported.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.EnablePasswordRetrieval">
+<summary>Not supported.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.MaxInvalidPasswordAttempts">
+<summary>Not supported.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.MinRequiredNonAlphanumericCharacters">
+<summary>Gets the minimum number of non-alphanumeric characters that must be used in a password. Throws a NotSupportedException if the application is not using secEnterprise authentication. If using secEnterprise authentication, it returns -1.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.MinRequiredPasswordLength">
+<summary>Gets the minimum number of characters that a password must contain. Throws a NotSupportedException if the application is not using secEnterprise authentication. If using secEnterprise authentication, it returns -1.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.PasswordAttemptWindow">
+<summary>Not supported. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.PasswordFormat">
+<summary>Gets a value that indicates how passwords are stored. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.PasswordStrengthRegularExpression">
+<summary>Not supported. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.RequiresQuestionAndAnswer">
+<summary>Not supported.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.RequiresUniqueEmail">
+<summary>Not supported.
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.TokenExpiry">
+<summary>Gets the length of time that the BusinessObjects Enterprise logon token will be valid.
+</summary>
+</member>
+<member name="E:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.ChangePasswordFailed">
+<summary>Occurs when a password change fails. 
+</summary>
+</member>
+<member name="E:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.LogonFailed">
+<summary>Occurs when a user logon fails.
+</summary>
+</member>
+<member name="E:BusinessObjects.Enterprise.Providers.BOEMembershipProvider.PasswordExpired">
+<summary>Occurs when a password has expired and needs to be changed. 
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEOperationFailedEventArgs">
+<summary>The event arguments for failed operations. 
+</summary>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.BOEOperationFailedEventArgs.Message">
+<summary>Gets the message string.
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.BOEOperationFailedEventHandler">
+<summary>The delegate for BusinessObjects Enterprise events such as, for example, the ChangePasswordFailed Event.
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.HierarchyMode">
+<summary>An enumeration of the hierarchy modes that are available.
+</summary>
+</member>
+<member name="F:BusinessObjects.Enterprise.Providers.HierarchyMode.Category">
+<summary>Use the category hierarchy.
+</summary>
+</member>
+<member name="F:BusinessObjects.Enterprise.Providers.HierarchyMode.Folder">
+<summary>Use the folder hierarchy.
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.Root">
+<summary>A root node in the BOEHierarchicalDataSource. 
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.Root.#ctor">
+<summary>Initializes a new instance of the Root class. 
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.Root.#ctor(System.Int32)">
+<summary>Initializes a new instance of the Root class with a specific SI_ID. 
+</summary>
+<param name="id">The SI_ID of the object to use for the root node. 
+</param>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.Root.ToString">
+<summary>Returns a string containing the value of the ItemID property. 
+</summary>
+<returns>A string containing the value of the SI_ID. 
+</returns>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.Root.ItemID">
+<summary>Gets or sets the SI_ID of the object to use for the root node.
+</summary>
+</member>
+<member name="T:BusinessObjects.Enterprise.Providers.RootCollection">
+<summary>A collection of Roots. Used by the BOEHierarchicalDataSource. 
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.RootCollection.#ctor">
+<summary>Initializes a new instance of the RootCollection class. 
+</summary>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.RootCollection.Add(BusinessObjects.Enterprise.Providers.Root)">
+<summary>Adds a Root to the collection. 
+</summary>
+<param name="value">The Root to add to the collection. 
+</param>
+<returns>The Root to add to the collection. 
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.RootCollection.Contains(BusinessObjects.Enterprise.Providers.Root)">
+<summary>Returns a boolean value that indicates if the Root is a member of the collection. 
+</summary>
+<param name="value">The Root to search for in the collection. 
+</param>
+<returns>A boolean value that indicates if the Root is a member of the collection.
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.RootCollection.CopyTo(BusinessObjects.Enterprise.Providers.Root[],System.Int32)">
+<summary>Copies the elements of the RootsCollection to an array, starting at the specified index.
+</summary>
+<param name="array">An array of Roots.</param>
+<param name="index">The index of the Root in the collection.</param>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.RootCollection.IndexOf(BusinessObjects.Enterprise.Providers.Root)">
+<summary>Returns the index of the Root in the collection. 
+</summary>
+<param name="value">The Root to find the index for. 
+</param>
+<returns>The index of the Root in the collection.
+</returns>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.RootCollection.Insert(System.Int32,BusinessObjects.Enterprise.Providers.Root)">
+<summary>Inserts the Root into the collection at the specified index. 
+</summary>
+<param name="index">The index to insert at. 
+</param>
+<param name="value">The Root to insert. 
+</param>
+</member>
+<member name="M:BusinessObjects.Enterprise.Providers.RootCollection.Remove(BusinessObjects.Enterprise.Providers.Root)">
+<summary>Removes a Root from the collection. 
+</summary>
+<param name="value">The Root to remove from the collection. 
+</param>
+</member>
+<member name="P:BusinessObjects.Enterprise.Providers.RootCollection.Item(System.Int32)">
+<summary>Gets or sets the Root at the index specified. 
+</summary>
+<param name="index">The index. 
+</param>
+</member>
+</members>
+</doc>
