@@ -24,7 +24,7 @@ Use the .net SDK to batch upload reports and update the report login information
 * ### Input the corresponding "Deployment Folder" and the "Deployment Folder" in the gridview
 ![](Guideline%20Image/Capture1.PNG)
 
-* ### Click Deply button
+* ### Click Deploy button
 
 * ### Deployment successful
 ![](Guideline%20Image/Capture2.PNG)
