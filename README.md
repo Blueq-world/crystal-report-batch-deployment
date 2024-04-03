@@ -1,6 +1,7 @@
 # crystal-report-batch-deployment
 [![Build status](https://ci.appveyor.com/api/projects/status/2exf5ulw51klq8wt?svg=true)](https://ci.appveyor.com/project/Blueq-world/crystal-report-batch-deployment)
 [![GitHub release](https://img.shields.io/github/release/Blueq-world/crystal-report-batch-deployment.svg)](https://github.com/Blueq-world/crystal-report-batch-deployment/releases)
+![](https://komarev.com/ghpvc/?username=Blueq-world)
 
 Use the .net SDK to batch upload reports and update the report login information in the Crystal Report Server.
 
